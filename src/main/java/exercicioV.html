@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Seleção</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .submit-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        .submit-btn.enabled {
+            cursor: pointer;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Selecione os Itens</h2>
+    <form id="itemForm">
+        <div>
+            <input type="checkbox" id="item1" name="item" value="Item 1">
+            <label for="item1">Celular</label>
+        </div>
+        <div>
+            <input type="checkbox" id="item2" name="item" value="Item 2">
+            <label for="item2">Bolsa</label>
+        </div>
+        <div>
+            <input type="checkbox" id="item3" name="item" value="Item 3">
+            <label for="item3">Cinto</label>
+        </div>
+        <div>
+            <input type="checkbox" id="item4" name="item" value="Item 4">
+            <label for="item4">Chocolate</label>
+        </div>
+        <button type="button" class="submit-btn" id="submitBtn" disabled>Enviar</button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('input[name="item"]');
+        const submitBtn = document.getElementById('submitBtn');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                const checkedCount = document.querySelectorAll('input[name="item"]:checked').length;
+                if (checkedCount >= 2) {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.add('enabled');
+                } else {
+                    submitBtn.disabled = true;
+                    submitBtn.classList.remove('enabled');
+                }
+            });
+        });
+
+        submitBtn.addEventListener('click', function () {
+            alert('Formulário enviado com sucesso!');
+            // Aqui você pode adicionar a lógica de envio do formulário, como fazer uma requisição HTTP
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+    <style>
+        .blue {
+            background-color: blue;
+            color: white;
+        }
+        .green {
+            background-color: green;
+            color: white;
+        }
+    </style>
+    <script>
+        function calculateSum() {
+            var value1 = document.getElementById('input1').value;
+            var value2 = document.getElementById('input2').value;
+            var num1 = parseFloat(value1);
+            var num2 = parseFloat(value2);
+            var sum = num1 + num2;
+            document.getElementById('result').textContent = 'Resultado: ' + sum;
+            //Logica central, atribui a classe criada no estilo seguindo o exercício
+            var button = document.getElementById('calculateButton');
+            if (sum % 2 === 0) {
+                button.className = 'blue';
+            } else {
+                button.className = 'green';
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Exercício 4</h1>
+<p>Continuando o exercício anterior, mude a cor do botão para azul se o resultado for par e para verde se for ímpar.</p>
+
+<input type="text" id="input1" placeholder="Digite um número">
+<input type="text" id="input2" placeholder="Digite outro número">
+<button id="calculateButton" onclick="calculateSum()">Calcular Soma</button>
+
+<p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2</title>
+</head>
+<body>
+<h1>Exercício 2</h1>
+<label for="um">Digite o primeiro valor:</label>
+<input type="text" name="um" id="um">
+<br><br>
+<label for="dois">Digite o segundo valor:</label>
+<input type="text" name="dois" id="dois">
+<br><br>
+<button onclick="soma()">Somar</button>
+
+<script>
+    function soma(){
+        var um = document.getElementById("um");
+        var dois = document.getElementById("dois");
+        alert("A junção dos dois campos é " + um.value + " " + dois.value);
+    }
+</script>
+</body>
+</html>

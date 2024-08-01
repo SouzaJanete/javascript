@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educação no Brasil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .controls {
+      margin-bottom: 20px;
+    }
+    .controls button {
+      padding: 10px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .content {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="controls">
+    <button id="fontWhiteBtn">Fonte Branca</button>
+    <button id="fontBlackBtn">Fonte Preta</button>
+    <button id="bgWhiteBtn">Fundo Branco</button>
+    <button id="bgBlackBtn">Fundo Preto</button>
+  </div>
+  <div class="content" id="content">
+    <p>
+      A educação no Brasil enfrenta muitos desafios, especialmente nas regiões interiores do país. Enquanto as áreas urbanas geralmente possuem melhor infraestrutura e maior acesso a recursos educacionais, as áreas rurais muitas vezes sofrem com a falta de escolas adequadas, transporte escolar deficiente e escassez de professores qualificados. Esses problemas contribuem para disparidades significativas na qualidade da educação oferecida nas diferentes regiões do Brasil.
+    </p>
+    <p>
+      Fonte: Ministério da Educação do Brasil
+    </p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('fontWhiteBtn').addEventListener('click', function() {
+    const content = document.getElementById('content');
+    content.style.color = 'white';
+    content.style.backgroundColor = 'black'; // Fundo preto
+  });
+
+  document.getElementById('fontBlackBtn').addEventListener('click', function() {
+    const content = document.getElementById('content');
+    content.style.color = 'black';
+    content.style.backgroundColor = 'white'; // Fundo branco
+  });
+
+  document.getElementById('bgWhiteBtn').addEventListener('click', function() {
+    const content = document.getElementById('content');
+    content.style.backgroundColor = 'white';
+    content.style.color = 'black'; // Fonte preta
+  });
+
+  document.getElementById('bgBlackBtn').addEventListener('click', function() {
+    const content = document.getElementById('content');
+    content.style.backgroundColor = 'black';
+    content.style.color = 'white'; // Fonte branca
+  });
+</script>
+
+</body>
+</html>
